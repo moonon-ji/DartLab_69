@@ -1,29 +1,8 @@
-void trianglecalculateArea(
-    double a,
-    double b,
-    double Function(double, double) formula) {
-  var result = formula(a, b);
-  print("Area = $result");
+void Operationcalculate(double h,double w, double Function(double,double) operation){
+  var result = operation(w,h);
+  print('Area ($w x $h) = $result');
 }
-
-double triangleArea(double base, double height) {
-  return 0.5 * base * height;
-}
-
-void rectanglecalculateArea(
-    double a,
-    double b,
-    double Function(double, double) formula) {
-  var result = formula(a, b);
-  print("Area = $result");
-}
-
-double rectangleArea(double width, double length) {
-  return width * length;
-}
-
-
 void main() {
-  trianglecalculateArea(10, 5, triangleArea); 
-  rectanglecalculateArea(10, 5, rectangleArea); 
+  Operationcalculate(5.5, 10.0, (a,b) => a*b);
+  Operationcalculate(8.0, 4.0,(a,b) => a*b);
 }
