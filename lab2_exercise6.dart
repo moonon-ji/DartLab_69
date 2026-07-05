@@ -1,4 +1,4 @@
-void calculateArea(
+void trianglecalculateArea(
     double a,
     double b,
     double Function(double, double) formula) {
@@ -10,6 +10,20 @@ double triangleArea(double base, double height) {
   return 0.5 * base * height;
 }
 
+void rectanglecalculateArea(
+    double a,
+    double b,
+    double Function(double, double) formula) {
+  var result = formula(a, b);
+  print("Area = $result");
+}
+
+double rectangleArea(double width, double length) {
+  return width * length;
+}
+
+
 void main() {
-  calculateArea(10, 5, triangleArea); // Area = 25.0
+  trianglecalculateArea(10, 5, triangleArea); 
+  rectanglecalculateArea(10, 5, rectangleArea); 
 }
